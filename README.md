@@ -1,5 +1,10 @@
 == Welcome to Rails
 
+A Reddit-style application to demonstrate foundation programming and web development skills. 
+
+##Made with my menor at [Bloc](http://bloc.io)
+
+
 Rails is a web-application framework that includes everything needed to create
 database-backed web applications according to the Model-View-Control pattern.
 
