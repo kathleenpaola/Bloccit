@@ -1,7 +1,26 @@
-<h1>Welcome to Bloccit</h1>
-<p id="index-title">This is the home page for Bloccit! </p>
+<div class="hero-unit">
+  <h1>Bloccit</h1>
+  <p>Bloccit is a resource for sharing with your friends!</p>
+  <p>
+    <%= link_to "Sign In", new_user_session_path, class: 'btn bn-primary btn-large' %> or
+    <% link_to "Sign Up", new_user_registration_path, class: 'bn btn-primary btn-large' %> today!
+  </p>
+</div>
 
-<div class="posts">Post 1 goes here.</div>
-<div class="posts">Post 2 goes here.</div>
 
-<section>I am the content in a section element.</section>
+<div class="row">
+  <div class="span4">
+    <h2>Salsa Dancing Is Great</h2>
+    <p>Salsa dancing is one of the best forms of latin dance. It is good for your health and when salsa music is playing, it is hard to sit still. New to salsa? A great few artists to start dancing to include Celia Cruz, Carlos Vives, and Shakira. Listening to this music will surely get your feet tappin' and hips moving. Don't be bashful - Get up and dance!</p>
+  </div>
+
+  <div class="span4">
+    <h2>The importance of A1 sauce</h2>
+    <p>A1 sauce is by far one of the most intriguing condiments available. While you think a steak is enjoyable in it's natural cooked form and juices, you must take advantage of the availability of A1 sauce - it's sweet and somewhat stark taste is sure to give your steak a whole new realm of possibility.</p>
+  </div>
+
+  <div class="span4">
+    <h2>See the world from a bicycle</h2>
+    <p>Bicycling has once again become trendy as a form of transportation. Although not always convenient, it is a wonderful way to get outside and see the world at a slower pace and close up. Driving in a car does not allow a person to appreciate those things which pass you by. However, a bicycle allows you to get close to things around you, stop if you so choose, and feel the world without a glass and metal barricade sheltering you from the real world.</p>
+  </div>
+</div>
