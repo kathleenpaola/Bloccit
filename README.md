@@ -255,6 +255,9 @@ public
 script
   Helper scripts for automation and generation.
 
+setup
+  Copy the "config/application.example.yml" file and remove "example". Your application.yml should contain your sensitive credentials. It should be included in .gitnore as well.
+
 test
   Unit and functional tests along with fixtures. When using the rails generate
   command, template test files will be generated for you and placed in this
