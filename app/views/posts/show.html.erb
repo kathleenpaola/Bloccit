@@ -5,6 +5,10 @@
     <small>
       <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %> submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.name %>
     <p><%= markdown @post.body %></p>
+
+    <%= postpic_tag(@post.postpic.tiny.url) if @post.user.postpic? %> submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.name %>
+    <p><%= markdown @post.body %></p>
+     <p><%= postpic_tag (@post.postpic_url) if @post.postpic? %></p>
   </div>
   <div class="span4">
     <% if can? :edit, @post %>
