@@ -1,14 +1,14 @@
 require 'faker'
 
-  topics = []
-  15.times do
-    topics << Topic.create(
-      name: Faker::Lorem.words(rand(1..10)).join(" "),
-      description: Faker::Lorem.paragraph(rand(1..4))
-      )
-  end
+topics = []
+15.times do
+  topics << Topic.create(
+    name: Faker::Lorem.words(rand(1..10)).join(" "),
+    description: Faker::Lorem.paragraph(rand(1..4))
+    )
+end
 
-  u = User.new(
+u = User.new(
   name: 'Admin User',
   email: 'admin@example.com',
   password: 'helloworld',
@@ -34,10 +34,7 @@ u = User.new(
 u.skip_confirmation!
 u.save
 
-"Seed finished"
-"#{User.count} users created" 
-"#{Post.count} posts created"
-"#{Comment.count} comments created"
+
 
 rand(4..10).times do 
 
@@ -50,7 +47,7 @@ rand(4..10).times do
   u.skip_confirmation!
   u.save
 
-  end 
+
 
   rand(5..12).times do 
     topic = topics.first
@@ -69,6 +66,20 @@ rand(4..10).times do
     topics.rotate!
     
   end
+end
+
+all_users = User.all
+
+Comment.each do |comment|
+  user = all_users.first
+  comment.update(user)
+  all_users.rotate!
+end
+  
+puts "Seed finished"
+puts "#{User.count} users created" 
+puts "#{Post.count} posts created"
+puts "#{Comment.count} comments created"
 
 
 
