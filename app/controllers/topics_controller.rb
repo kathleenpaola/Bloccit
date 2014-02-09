@@ -40,8 +40,5 @@ class TopicsController < ApplicationController
     end
   end
 
-  def show
-    @topic = Topic.find(params[:id])
-    @posts = @topic.posts
-  end
+  
 end
