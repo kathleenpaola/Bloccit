@@ -34,11 +34,6 @@ u = User.new(
 u.skip_confirmation!
 u.save
 
-"Seed finished"
-"#{User.count} users created" 
-"#{Post.count} posts created"
-"#{Comment.count} comments created"
-
 rand(4..10).times do 
 
   password = Faker::Lorem.characters(10)
@@ -48,9 +43,7 @@ rand(4..10).times do
     password: password,
     password_confirmation: password)
   u.skip_confirmation!
-  u.save
-
-  end 
+  u.save 
 
   rand(5..12).times do 
     topic = topics.first
@@ -63,12 +56,28 @@ rand(4..10).times do
 
     rand(3..7).times do
       p.comments.create(
-        body: Faker::Lorem.paragraphs(rand(1..2)).join("/n"))
+        body: Faker::Lorem.paragraphs(rand(1..2)).join("/n"),
+        user_id: u.id
+        )
+
     end       
 
     topics.rotate!
     
   end
+end
+#comments = Comment.all 
+#all_users = User.all
+
+#comments.each do |comment|
+#  user = all_users.first
+#  comment.user_id = user.id
+#  all_users.rotate!
+#  comment.save
+#end
 
 
-
+puts "Seed finished"
+puts "#{User.count} users created" 
+puts "#{Post.count} posts created"
+puts "#{Comment.count} comments created"

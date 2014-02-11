@@ -9,6 +9,8 @@
     
     <p><%= markdown @post.body %></p>
 
+    <%= render @comments %>
+
   </div>
   <div class="span4">
     <% if can? :edit, @post %>
