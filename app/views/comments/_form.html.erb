@@ -1,1 +1,14 @@
-_form.html.erb
+<%= form_for [topic, post, comment], html: { class: 'form-horizontal' } do |f| %>
+
+<div class="control-group">
+    <div class="controls">
+      <%= f.text_area :body, rows: 8 %>
+    </div>
+</div>
+
+<div class="control-group">
+   <div class="controls">
+      <%= f.submit "Submit Here", class: 'btn' %>
+   </div>
+</div>
+<% end %>
