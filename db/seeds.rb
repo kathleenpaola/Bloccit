@@ -54,6 +54,9 @@ rand(4..10).times do
 
     p.update_attribute(:created_at, Time.now - rand(600..31536000))
 
+    p.update_rank
+    topics.rotate!
+
     rand(3..7).times do
       p.comments.create(
         body: Faker::Lorem.paragraphs(rand(1..2)).join("/n"),

@@ -17,10 +17,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable, :omniauth_providers => [:facebook]
 
   # Setup accessible (or protected) attributes for your model
-      attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :avatar, :provider, :uid
+      attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :avatar, :provider, :uid, :email_favorites
       
       has_many :posts
       has_many :comments
+      has_many :votes, dependent: :destroy
+      has_many :favorites, dependent: :destroy
 
       before_create :set_member
 
@@ -42,5 +44,11 @@ class User < ActiveRecord::Base
          end
          user
       end
+
+      def favorited(post)
+        self.favorites.where(post_id: post.id).first
+      end
+
+      private
  # attr_accessible :title, :body
 end
