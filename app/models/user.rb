@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
     role.nil? ? false : ROLES.index(base_role.to_s) <= ROLES.index(role)
   end  
 
+      def favorited(post)
+        self.favorites.where(post_id: post.id).first
+      end
+
   private
 
   def set_member
@@ -45,10 +49,8 @@ class User < ActiveRecord::Base
          user
       end
 
-      def favorited(post)
-        self.favorites.where(post_id: post.id).first
-      end
 
-      private
+
+
  # attr_accessible :title, :body
 end

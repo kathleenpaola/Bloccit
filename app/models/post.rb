@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :topic
 
-  after_ create :create_vote
+  after_create :create_vote
 
   mount_uploader :postpic, PostpicUploader
 
