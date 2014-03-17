@@ -23,6 +23,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails', '~> 4.0'
+end
+
 gem 'newrelic_rpm'
 
 gem 'jquery-rails'
@@ -48,6 +53,8 @@ gem 'paperclip'
 gem 'will_paginate', '~> 3.0'
 
 gem 'omniauth-facebook'
+
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
