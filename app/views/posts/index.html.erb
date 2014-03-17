@@ -19,4 +19,26 @@
       </small>
     </div>
   </div>
+
+  <div class="row">
+    <div class="span8">
+      <h1>Popular</h1>
+        <p class="lead">Active posts this week</p>
+        <%= render partial: 'posts/post', collection: @posts %>
+        <%= will_paginate @posts %>
+    </div>
+    <div class="span4">
+    </div>
+  </div>
 <% end %>
+
+<div class="row">
+  <div class="span8">
+    <h1>Popular</h1>
+    <p class="lead">Active posts this week</p>
+    <%= render partial: 'posts/post', collection: @posts %>
+    <%= will_paginate @posts %>
+  </div>
+  <div class="span4">
+  </div>
+</div>
