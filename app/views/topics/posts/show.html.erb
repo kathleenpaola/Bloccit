@@ -12,7 +12,17 @@
     <p><%= markdown @post.body %></p>
 
     <%= render partial: 'comments/comment', collection: @comments %>
-     <%# render partial: "comments/form", locals: { topic: @topic, post: @post, comment: @comment } %>
+     
+  <% if can? :create, Comment %>
+    <hr/>
+
+    <a href="#" class="js-show-hide" data-selector="js-add-comment">Add Comment</a>
+    <br/>
+    <div class="js-new-comment hide">
+    <h4>New Comment</h4>
+    <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
+    </div>
+    <% end %>
 
   </div>
   <div class="span4">
