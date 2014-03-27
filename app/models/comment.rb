@@ -1,4 +1,6 @@
 class Comment < ActiveRecord::Base
+  default_scope order('updated_at DESC')
+
   belongs_to :post
   belongs_to :user
   attr_accessible :body, :user_id
@@ -16,3 +18,4 @@ class Comment < ActiveRecord::Base
     end
   end
 end
+
